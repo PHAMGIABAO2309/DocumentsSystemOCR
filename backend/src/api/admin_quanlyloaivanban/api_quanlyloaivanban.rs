@@ -28,8 +28,14 @@ pub async fn post_admin_add_typedocuments(
     form: web::Json<TypeDocument>,
 ) -> impl Responder {
     match handle_insert(db_pool, form).await {
-        Ok(_) => HttpResponse::Ok().body("Thêm loai van ban thành công"),
-        Err(e) => HttpResponse::InternalServerError().body(format!("Lỗi: {}", e)),
+        Ok(_) => HttpResponse::Ok().json(json!({
+            "success": true,
+            "message": "Thêm loại văn bản thành công"
+        })),
+        Err(e) => HttpResponse::InternalServerError().json(json!({
+            "success": false,
+            "message": format!("Lỗi: {}", e)
+        })),
     }
 }
 async fn handle_insert(

@@ -28,7 +28,8 @@ use crate::api::admin_thuoctinhvanban::api_thuoctinhvanban::get_admin_article_da
 use crate::api::admin_qlvbocr::api_qlvbocr::post_admin_quanlyvanbanocr;
 use crate::api::admin_quanlytaikhoan::api_admin_account::{get_account_json, update_account, delete_account};
 use crate::api::admin_quanlyloaivanban::api_quanlyloaivanban::{get_listtype_json, post_admin_add_typedocuments, check_typedocuments_typeid,update_typedocument,delete_typedocument};
-use crate::api::admin_quanlycoquan::api_admin_quanlycoquan::{get_organization_json, get_new_organization_code, post_admin_add_organization,update_organization,delete_organization};
+use crate::api::admin_quanlycoquan::api_admin_quanlycoquan::{get_organization_json, get_new_organization_code, check_organization_name, post_admin_add_organization,update_organization,delete_organization};
+use crate::api::admin_thongke::api_thongke::{get_thongke_json, get_thongketaikhoan_json, get_thongkecoquan_json, get_thongkeloaivanban_json};
 
 pub async fn start_server() -> std::io::Result<()> {
     let (pool, address) = ketnoi_cosodulieu().await;
@@ -78,6 +79,12 @@ pub async fn start_server() -> std::io::Result<()> {
             .service(post_admin_add_organization)
             .service(update_organization)
             .service(delete_organization)
+            .service(check_organization_name)
+
+            .service(get_thongke_json)
+            .service(get_thongketaikhoan_json)
+            .service(get_thongkeloaivanban_json)
+            .service(get_thongkecoquan_json)
 
             .service(Files::new("/static", "./static").show_files_listing())
 

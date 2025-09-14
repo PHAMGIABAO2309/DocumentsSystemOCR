@@ -21,3 +21,4 @@ pub mod admin_qlvbocr;
 pub mod admin_quanlytaikhoan;
 pub mod admin_quanlyloaivanban;
 pub mod admin_quanlycoquan;
+pub mod admin_thongke;
