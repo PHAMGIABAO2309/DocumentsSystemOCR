@@ -1,0 +1,1 @@
+pub const SQL_GET_USER: &str = " SELECT ID, FullName, Email FROM account; ";

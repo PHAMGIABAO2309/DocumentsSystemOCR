@@ -1,0 +1,23 @@
+pub mod hiennguoidung;
+pub mod trangchu;
+pub mod dinhkemfile;
+pub mod vanban;
+pub mod tomtatvanban;
+pub mod goiytimkiem;
+pub mod thuoctinhvanban;
+pub mod timtheolinhvuc;
+pub mod timtheonambanhanh;
+pub mod timtheoloaivanban;
+pub mod timtheocoquanbanhanh;
+pub mod dangnhap;
+pub mod dangky;
+pub mod quenmatkhau;
+pub mod xacnhanmatkhau;
+
+pub mod admin_danhsachvanban;
+pub mod admin_quanlyvanbanden;
+pub mod admin_thuoctinhvanban;
+pub mod admin_qlvbocr;
+pub mod admin_quanlytaikhoan;
+pub mod admin_quanlyloaivanban;
+pub mod admin_quanlycoquan;

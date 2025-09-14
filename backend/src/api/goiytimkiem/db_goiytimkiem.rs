@@ -1,0 +1,1 @@
+pub const SQL_GOI_Y_TIM_KIEM: &str = " SELECT FileCode, Title, StartDate, dateupdate, path FROM files WHERE Title LIKE ? ";

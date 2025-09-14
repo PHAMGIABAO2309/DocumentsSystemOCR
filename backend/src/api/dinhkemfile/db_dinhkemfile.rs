@@ -1,0 +1,1 @@
+pub const SQL_DINH_KEM_FILE: &str = " SELECT FileCode, Title, path FROM `files` WHERE FileCode =  ?; ";
